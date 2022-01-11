@@ -1,0 +1,97 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-title>Leads</ion-title>
+
+    <ion-buttons slot="end">
+
+      <ion-button>
+
+        <ion-icon slot="icon-only" name="filter-outline"></ion-icon>
+
+      </ion-button>
+
+    </ion-buttons>
+
+  </ion-toolbar>
+
+  <ion-toolbar mode="md">
+
+    <ion-segment value="1" scrollable>
+
+      <ion-segment-button value="1">
+
+        <ion-label>Todos</ion-label>
+
+      </ion-segment-button>
+
+      <ion-segment-button value="2">
+
+        <ion-label>Em aberto</ion-label>
+
+      </ion-segment-button>
+
+      <ion-segment-button value="3">
+
+        <ion-label>Finalizados</ion-label>
+
+      </ion-segment-button>
+
+      <ion-segment-button value="4">
+
+        <ion-label>Vendas realizadas</ion-label>
+
+      </ion-segment-button>
+
+    </ion-segment>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar placeholder="Buscar" mode="ios"></ion-searchbar>
+
+  <ion-list>
+
+    <ion-item lines="full" button="true" detail="true">
+
+      <ion-label>
+
+        <h6>Patricia Silva Guerra</h6>
+
+        <p>Michelly <small>(Responsável)</small></p>
+
+        <p>Matriz <small>(Unidade)</small></p>
+
+        <p>Comercial <small>(Equipe)</small></p>
+
+        <p>Lead Fone <small>(Conversão)</small></p>
+
+        <p>18/11/2021 17:43 <small>(Chegada)</small></p>
+
+        <p>18/11/2021 17:43 <small>(Último contato)</small></p>
+
+        <ion-badge color="secondary" mode="ios">Potencial pequeno</ion-badge>
+
+        <ion-badge color="warning" mode="ios">Venda não realizada</ion-badge>
+
+      </ion-label>
+
+    </ion-item>
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+
+    <ion-fab-button>
+
+      <ion-icon name="add-outline"></ion-icon>
+
+    </ion-fab-button>
+
+  </ion-fab>
+
+</ion-content>

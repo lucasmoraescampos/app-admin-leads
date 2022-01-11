@@ -1,0 +1,6 @@
+{
+	"appId": "br.com.rowanlead",
+	"appName": "app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

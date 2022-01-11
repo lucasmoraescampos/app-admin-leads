@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar>
+
+    <ion-title>{{ viewTitle }}</ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-header>
+
+    <ion-toolbar>
+
+      <ion-buttons>
+  
+        <ion-button color="medium" (click)="today()">Hoje</ion-button>
+  
+        <ion-button color="medium" (click)="changeMode('month')">Mês</ion-button>
+  
+        <ion-button color="medium" (click)="changeMode('week')">Semana</ion-button>
+  
+        <ion-button color="medium" (click)="changeMode('day')">Dia</ion-button>
+  
+      </ion-buttons>
+  
+    </ion-toolbar>
+
+  </ion-header>
+
+  <calendar
+    [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    [step]="calendar.step"
+    formatWeekTitle="MMMM yyyy, 'Semana' w"
+    noEventsLabel="Sem eventos"
+    [monthviewEventDetailTemplate]="template"
+    (onCurrentDateChanged)="onCurrentDateChanged($event)"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)">
+  </calendar>
+
+  <ng-template #template let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
+    
+    <ion-list class="event-detail-container" has-bouncing="false" *ngIf="showEventDetail" overflow-scroll="false">
+      
+      <ion-item lines="none" color="primary">
+
+        <ion-label>Eventos</ion-label>
+
+      </ion-item>
+
+      <ion-item lines="full" button="true" detail="true" *ngFor="let event of selectedDate?.events">
+
+        <ion-icon slot="start" name="calendar-clear-outline"></ion-icon>
+
+        <ion-label class="ion-text-wrap">
+          
+          <h6>{{ event.title }}</h6>
+
+          <p *ngIf="!event.allDay">{{ event.startTime | date: 'HH:mm' }} - {{ event.endTime | date: 'HH:mm' }}</p>
+        
+        </ion-label>
+
+      </ion-item>
+
+      <ion-item lines="none" *ngIf="selectedDate?.events.length == 0">
+
+        <ion-label class="ion-text-center">{{ noEventsLabel }}</ion-label>
+
+      </ion-item>
+
+    </ion-list>
+    
+</ng-template>
+
+</ion-content>

@@ -1,0 +1,14 @@
+ion-header {
+    ion-title {
+        text-transform: capitalize;
+    }
+
+    ion-buttons {
+        justify-content: space-around;
+
+        ion-button {
+            letter-spacing: 0;
+            text-transform: initial;
+        }
+    }
+}
